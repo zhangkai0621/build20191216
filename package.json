@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/zhangkai0621/webpack/issues"
   },
-  "homepage": "https://github.com/zhangkai0621/webpack#readme"
+  "homepage": "https://github.com/zhangkai0621/webpack#readme",
+  "devDependencies": {
+    "css-loader": "^3.3.2",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.3",
+    "webpack-cli": "^3.3.10"
+  }
 }
