@@ -1,4 +1,6 @@
 const path = require('path');
+// 引入 Plugin
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     // 执行入口
     entry: './main.js',
@@ -22,8 +24,21 @@ module.exports = {
                     Loader 的执行顺序是有后至前
                     当遇到 .css 结尾的文件时，先由 css-loader 读取文件，再由 style-loader 将 css 的内容注入 javascript
                 */
-                use: ['style-loader', 'css-loader'],
+                // use: ['style-loader', 'css-loader'],
+
+                loaders: ExtractTextPlugin.extract({
+                    // 转换 .css 文件需要使用的 Loader
+                    use: ['css-loader'],
+                })
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin({
+            // 从 .js 文件中提取出来的 .css 文件的名称
+            // 因为 webpack 4.3 包含了 contenthash 这个关键字段，所以在 ExtractTextPlugin 中不能使用 contenthash
+            // 使用 md5:contenthash:hex:8 替代
+            filename: `[name]_[md5:contenthash:hex:8].css`,
+        })
+    ]
 }

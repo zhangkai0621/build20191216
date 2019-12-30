@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
@@ -19,8 +20,10 @@
   "homepage": "https://github.com/zhangkai0621/webpack#readme",
   "devDependencies": {
     "css-loader": "^3.3.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "style-loader": "^1.0.1",
     "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   }
 }
