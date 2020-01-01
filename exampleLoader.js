@@ -55,3 +55,24 @@ use: [
         path.resolve(__dirname, 'bower_modules'),
     ]
 }
+
+// parse 示例
+module: {
+    rules: [
+        {
+            test: /\.js$/,
+            use: ['babel-loader'],
+            parse : {
+                amd: false, // 禁用 AMD
+                commonjs: false, // 禁用 CommonJS
+                system: false, // 禁用SystemJS
+                harmony: false, // 禁用 ES6 import/export
+                requireInclude: false, // 禁用 require.include
+                requireEnsure: false, // 禁用 require.ensure
+                requireContext: false, // 禁用 require.context
+                browserify: false, // 禁用 browserify
+                requireJs: false, // 禁用 requirejs
+            }
+        }
+    ]
+}
