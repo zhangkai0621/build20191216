@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/zhangkai0621/webpack#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.3.2",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "style-loader": "^1.0.1",

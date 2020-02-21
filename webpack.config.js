@@ -30,9 +30,15 @@ module.exports = {
                     // 转换 .css 文件需要使用的 Loader
                     use: ['css-loader'],
                 })
+            },
+            // 接入Babel
+            {
+                test: /\.js$/,
+                use: ['babel-loader']
             }
         ]
     },
+    devtool: 'source-map',
     plugins: [
         new ExtractTextPlugin({
             // 从 .js 文件中提取出来的 .css 文件的名称
